@@ -32,7 +32,7 @@ const formatNumber = num => {
         <div>
             <h4>Order Summery</h4>
             <p>Items: {cart.length}</p>
-           <p>Product Price:{formatNumber(total)}</p>
+           <p>Product Price: {formatNumber(total)}</p>
             <p><small>Shipping Cost: {shipping}</small></p>
     <p><small>Tax + VAT: {tax}</small></p>
     <p>Total Price: {grandTotal}</p>
