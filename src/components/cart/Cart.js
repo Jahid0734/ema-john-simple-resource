@@ -1,14 +1,17 @@
 import React from 'react';
-import Product from '../Product/Product';
+import { useAuth } from '../Login/useAuth';
 
 const Cart = (props) => {
     const cart = props.cart;
+    const auth = useAuth();
+    // console.log(auth.user);
     // const total = cart.reduce((total, ponno) => total + ponno.price, 0);
 
 let total = 0;
 for(let i = 0; i< cart.length; i++){
     const product = cart[i];
-    total = total + product.price;
+    total = total + product.price * product.quantity;
+    debugger;
 }
 let shipping = 0;
 if(total > 35){
@@ -32,10 +35,15 @@ const formatNumber = num => {
         <div>
             <h4>Order Summery</h4>
             <p>Items: {cart.length}</p>
-           <p>Product Price: {formatNumber(total)}</p>
+            <p>Product Price: {formatNumber(total)}</p>
             <p><small>Shipping Cost: {shipping}</small></p>
-    <p><small>Tax + VAT: {tax}</small></p>
-    <p>Total Price: {grandTotal}</p>
+            <p><small>Tax + VAT: {tax}</small></p>
+            <p>Total Price: {grandTotal}</p>
+            <br/>
+            {
+                props.children
+            }
+           
         </div>
     );
 };
