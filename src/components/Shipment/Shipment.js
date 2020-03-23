@@ -13,61 +13,60 @@ const Shipment = () => {
   
     return (
       
-      <form className="ship-from" onSubmit={handleSubmit(onSubmit)}>
-    
-        
+<form className="ship-from" onSubmit={handleSubmit(onSubmit)}>
         <input name="name"
             defaultValue={auth.user.name} 
             ref={register({ required: true })} 
-            placeholder="Your Name" />
-         {
-
-         errors.name && <span className="error">Name is required</span>
-
-         }
-            <input name="email" 
+            placeholder="Your Name"/>
+          {
+          errors.name && <span className="error">Name is required</span>
+          }
+        <input name="email" 
                 defaultValue={auth.user.email}
-                ref={register({ required: true })} 
-                placeholder="Your Email" />
-         {
+                ref={register({ required: true})} 
+                placeholder="Your Email"/>
+          {
+          errors.email && <span className="error">Email is required</span>
+          }
+        <input name="AddressLine1"ref={register({ required: true })} placeholder="Address line 1" />
+          {
+          errors.AddressLine1 && <span className="error">Address is required</span>
+          }
+        <input name="AddressLine2"ref={register} placeholder="Address line 2" />
 
-         errors.email && <span className="error">Email is required</span>
-
-         }
-           <input name="AddressLine1"ref={register({ required: true })} placeholder="Address line 1" />
-         {
-         
-         errors.AddressLine1 && <span className="error">Address is required</span>
-
-         }
-         <input name="AddressLine2"ref={register} placeholder="Address line 2" />
-         
-         <input name="city"ref={register({ required: true })} placeholder="City" />
-
-         {
-         
+        <input name="city"ref={register({ required: true })} placeholder="City" />
+          {
          errors.city && <span className="error">City is required</span>
-         }
-         <input name="country"ref={register({ required: true })}  placeholder="Country" />
-
-         {
-
-         errors.country && <span className="error">Country is required</span>
-
-         }
-         <input name="zipcode"ref={register({ required: true })} placeholder = "Zip Code"/>
-         {
-         
-         errors.zipcode && <span className="error">Zipcode is required</span>
-         
-         }
-         
-       
-       <input type="submit" />
-        
-        
-      </form>
+          }
+        <input name="country"ref={register({ required: true })}  placeholder="Country" />
+          {
+          errors.country && <span className="error">Country is required</span>
+          }
+        <input name="zipcode"ref={register({ required: true })} placeholder = "Zip Code"/>
+          {
+          errors.zipcode && <span className="error">Zipcode is required</span>
+          }
+        <input type="submit" />  
+</form>
     )
 };
+export default Shipment;  
+        
 
-export default Shipment;
+
+
+         
+
+         
+
+         
+         
+         
+
+         
+         
+         
+       
+       
+        
+        

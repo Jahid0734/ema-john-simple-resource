@@ -6,16 +6,16 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  
 } from "react-router-dom";
 import Review from './components/Review/Review';
 import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
 import ProductDtaile from './components/ProductDtaile/ProductDtaile';
 import Login from './components/Login/Login';
-import { createContext } from 'react';
 import { AuthContextProvieder, PrivateRoute } from './components/Login/useAuth';
 import Shipment from './components/Shipment/Shipment';
+
 
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
           <Route path="/review">
             <Review></Review>
           </Route>
-          <Route path="/inventory">
+          <Route path="/orders">
               <Inventory></Inventory>
           </Route>
           <Route exact path="/">
